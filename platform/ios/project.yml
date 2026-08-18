@@ -68,12 +68,11 @@ targets:
       - sdk: CoreFoundation.framework
       - sdk: UniformTypeIdentifiers.framework
     preBuildScripts:
-      - name: Build base/ libs and staging tree
+      - name: Build base libs and staging tree
         script: |
           set -euo pipefail
-          # Xcode strips PATH down. Reinstate Homebrew GNU tools used by
-          # KOReader's Makefile.
-          export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$(brew --prefix)/opt/gnu-getopt/bin:$(brew --prefix)/opt/make/libexec/gnubin:$(brew --prefix)/opt/util-linux/bin:${PATH}"
+          # Xcode strips PATH down. Reinstate Homebrew GNU tools used by KOReader's Makefile.
+          export PATH="/opt/homebrew/opt/bash/bin:/opt/homebrew/opt/findutils/libexec/gnubin:/opt/homebrew/opt/gnu-getopt/bin:/opt/homebrew/opt/make/libexec/gnubin:/opt/homebrew/opt/util-linux/bin:${PATH}"
           cd "${SRCROOT}"
           # `all` (not `base`) so the koreader-ios-…/koreader staging
           # tree gets assembled too — the post-build script rsyncs from
