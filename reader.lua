@@ -283,7 +283,7 @@ else
     local start_with = G_reader_settings:readSetting("start_with") or "filemanager"
 
     local QuickStart = require("ui/quickstart")
-    if not QuickStart:isShown() then
+    if not QuickStart:isShown() then    -- FIX: always true
         start_with = "last"
         last_file = QuickStart:getQuickStart()
     end
