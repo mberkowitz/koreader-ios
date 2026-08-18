@@ -19,9 +19,17 @@
 >   a sideloaded iPhone is around 4 seconds.
 > - LuaJIT runs interpreter-only (the iOS sandbox forbids W^X without a special
 >   entitlement). Builds against the iOS SDK from a macOS host via `make TARGET=ios`.
+> - **SimpleUI plugin, bundled and enabled by default** — a distraction-free
+>   home screen, customisable bottom navigation bar, top status bar, and a
+>   reworked library title bar
+>   ([doctorhetfield-cmd/simpleui.koplugin](https://github.com/doctorhetfield-cmd/simpleui.koplugin),
+>   MIT). Configure it under *Menu → Tools → SimpleUI*.
+> - **Behaviour fixes** in `frontend/device/sdl/device.lua` and `reader.lua`:
+>   - Removed the automatic hardware-keyboard detection that caused typed
+>     characters to leak into the cover gallery / file browser.
+>   - Fixed the Quickstart guide that kept reopening on every launch.
 >
 > ### What you need
->
 > - **macOS** with **Xcode** installed (App Store or developer.apple.com — not the
 >   Command-Line Tools alone; we need the iOS SDK).
 > - **Homebrew** (https://brew.sh).
